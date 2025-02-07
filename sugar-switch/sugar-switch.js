@@ -1,7 +1,7 @@
 Game.registerMod('sugarSwitch',{
 	init:function(){
-		new Game.Upgrade('Sugar switch [off]','Turning this on will make all sugar lumps grow <b>twice as fast</b>, but halts all cookie production.<q>Don\'t use this sugar lump. Someone stuck wires in it!</q>',0,[0,0,'/sprites.png']);
-		new Game.Upgrade('Sugar switch [on]','The switch is currently making sugar lumps grow <b>twice as fast</b>, but is halting all cookie production.<br> Turning it off will revert those effects.',0,[1,0,'/sprites.png'],function(){
+		new Game.Upgrade('Sugar switch [off]','Turning this on will make all sugar lumps grow <b>twice as fast</b>, but halts all cookie production.<q>Don\'t use this sugar lump. Someone stuck wires in it!</q>',0,[0,0,'https://twoslimes.github.io/fan-art-mods/sugar-switch/sprites.png']);
+		new Game.Upgrade('Sugar switch [on]','The switch is currently making sugar lumps grow <b>twice as fast</b>, but is halting all cookie production.<br> Turning it off will revert those effects.',0,[1,0,'https://twoslimes.github.io/fan-art-mods/sugar-switch/sprites.png'],function(){
 			Game.Upgrades['Sugar switch [off]'].bought=0;
 			Game.Upgrades['Sugar switch [off]'].unlocked=1;
 		});
