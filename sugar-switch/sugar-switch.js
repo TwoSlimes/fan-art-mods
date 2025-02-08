@@ -6,7 +6,8 @@ Game.registerMod('sugarSwitch',{
 			Game.Upgrades['Sugar switch [off]'].unlocked=1;
 		});
 		eval('Game.computeLumpTimes='+Game.computeLumpTimes.toString().replace('Game.lumpOverripeAge=Game.lumpRipeAge+hour','if (Game.Has("Sugar switch [off]")){Game.lumpMatureAge /=2; Game.lumpRipeAge /=2};Game.lumpOverripeAge=Game.lumpRipeAge+hour'));
-		Game.registerHook('cps',function(){if (Game.Has('Sugar switch [off]')) {return 0} else {return Game.cookiesPs}})
+		Game.registerHook('cps',function(){if (Game.Has('Sugar switch [off]')) {return 0} else {return Game.cookiesPs}});
+		Game.registerHook('check',function(){if (Game.Upgrades['Sugar switch [off]'].unlocked==0 && Game.Upgrades['Sugar switch [on]'].unlocked==0) Game.Unlock('Sugar switch [off]')});
 		Game.Upgrades['Sugar switch [off]'].pool='toggle';
 		Game.Upgrades['Sugar switch [off]'].priceLumps=1;
 		Game.Upgrades['Sugar switch [off]'].order=40020;
